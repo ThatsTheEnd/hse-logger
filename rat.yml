@@ -1,0 +1,25 @@
+# ################################################################################
+# HSE RELEASE AUTOMATION TOOLS - Project-Specific Variables
+# ################################################################################
+
+variables:
+    # variables for project "LGR"
+    LGR_PROJECT: "/Source/hse-logger.lvproj"
+    LGR_PROJECT_SRCDIR: "Source/HSE-Logger/"
+    LGR_PROJECT_TARGET: "My Computer"
+    LGR_PROJECT_BUILDSPEC: "src_dist"
+    LGR_INIT_DEPENDENCIES: ""
+    LGR_NLZR_CONFIG: "rat-analyzr.cfg"
+    LGR_NLZR_ONLYCHANGES: "TRUE"
+    LGR_NLZR_PUBLISHFAIL: "FALSE"
+    LGR_NLZR_EMAILRESULTS: "TRUE"
+    LGR_TSTR_PUBLISHFAIL: "FALSE"
+    LGR_TSTR_EMAILRESULTS: "TRUE"
+    LGR_BLDR_UPDATEVIDESC: "TRUE"
+    LGR_BLDR_UPDATEMAINBD: "TRUE"
+    LGR_BLDR_COMPANY: "HAMPEL SOFTWARE ENGINEERING"
+    LGR_BLDR_WEBSITE: "www.hampel-soft.com"
+    LGR_VIPB_FILE: "hse-logger.vipb"
+    LGR_PKGR_TEMPLATE: ""
+    LGR_DPLR_DESTINATION: "\\COMP-NAS\\web\\releases"
+    LGR_DPLR_NAMESPACE: ""

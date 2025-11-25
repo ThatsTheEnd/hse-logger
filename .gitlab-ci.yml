@@ -1,0 +1,118 @@
+# ################################################################################
+# HSE RELEASE AUTOMATION TOOLS - Generic CI Script
+# ################################################################################
+
+# include the project-specific variable definitions
+include:
+  - local: 'rat.yml'
+
+# predefined environment variables (see https://docs.gitlab.com/ee/ci/variables/README.html)
+variables: 
+    #     CI_PROJECT_DIR				The full path where the repository is cloned and where the job is run.
+    #     CI_PROJECT_ID					The unique id of the current project that GitLab CI uses internally
+    #     CI_PROJECT_NAME				The project name that is currently being built (actually it is project folder name)
+    #     CI_PROJECT_NAMESPACE			The project namespace (username or groupname) that is currently being built
+    #     CI_PROJECT_PATH				The namespace with project name
+    #     CI_PROJECT_PATH_SLUG			$CI_PROJECT_PATH lowercased and with everything except 0-9 and a-z replaced with -. Use in URLs and domain names.
+    #     GITLAB_USER_EMAIL				The email of the user who started the job
+
+    # Taken from https://docs.gitlab.com/ee/ci/git_submodules.html
+    GIT_SUBMODULE_STRATEGY: recursive
+
+# GitLab Shared Group Variables for RAT
+# see https://dokuwiki.hampel-soft.com/code/commercial/rat/install/configuration-rat#email_settings
+    #RAT_EMAIL_SERVER
+    #RAT_EMAIL_ADDR
+    #RAT_EMAIL_USER
+    #RAT_EMAIL_PASSWORD
+
+# ################################################################################
+# STAGES  
+# ################################################################################
+stages:
+    - init
+    - test
+    - document
+    - src
+    - vipb
+    - teardown
+    
+# ################################################################################
+# This yml file serves as an example how the HSE Release Automation Tools can be called
+# different scenarios are implemented for illustration
+# use regex to define the rules which stages should be included
+# examples:
+# - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\..+$/'             => is triggered Simple Tags (e.g. v1.2.3)
+# - if: '$CI_COMMIT_TAG =~ /^(INST)-v[0-9]+\.[0-9]+\..+$/'      => is triggered by one prefixed Tag (e.g. INST-v1.2.3)
+# - if: '$CI_COMMIT_TAG =~ /^(INST|EXE)-v[0-9]+\.[0-9]+\..+$/'  => is triggered by two prefixed Tags (e.g. INST-v1.2.3 and EXE-v1.2.3)
+# see https://dokuwiki.hampel-soft.com/code/commercial/rat/tools/general for a detailled documentation
+#
+# extends (e.g. ".Std:") defines entry names that a job that uses extends inherits from.
+# see https://docs.gitlab.com/ee/ci/yaml/README.html#extends
+# ################################################################################ 
+
+# ##################################################################################
+# Pipeline for building VI Packages and Source Distribution
+#   - is triggered without prefixed Tag (e.g. v1.2.3)
+#   - as third parameter the YAML Prefix LGR is hardcoded 
+#   - as forth parameter $CI_COMMIT_TAG is used
+# ################################################################################
+.LGR:
+    rules:       
+        - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\..+$/'
+          when: on_success
+    tags:
+        - "2016"
+        - "labview"
+    
+LGR_Dependencies:
+    extends: .LGR
+    stage: init
+    script:
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-initializr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+
+LGR_Analyze:
+    extends: .LGR
+    stage: test
+    script:
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-validatr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-analyzr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-testr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+    artifacts:
+        paths:
+        - artifacts/
+        reports:
+            codequality:
+                - artifacts/analyzr/CodeQualityReport.json    
+
+LGR_SRC:
+    extends: .LGR
+    stage: src
+    script:
+        # Build (execute buildspec)
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-buildr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+        # Package (create .zip archive of project)
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-packagr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+        # Deploy (copy package to shared folder)
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-deployr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+        
+LGR_VIP:
+    extends: .LGR
+    stage: vipb
+    script:
+        # Build (execute buildspec)
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-buildr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+        # execute vipbuildr
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-vipbuildr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+        # Deploy (copy package to shared folder)
+        - g-cli --timeout 30000 -v --lv-ver 2016 "HSE RAT\rat-deployr.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+
+LGRB_Teardown:
+    extends: .LGR
+    stage: teardown
+    script:
+        - g-cli --timeout 30000 --kill -v --lv-ver 2016 "HSE RAT\rat-teardown.vi" -- "$CI_PROJECT_DIR" "$CI_PROJECT_NAMESPACE" LGR $CI_COMMIT_TAG
+    rules:       
+        - if: '$CI_COMMIT_TAG =~ /^v[0-9]+\.[0-9]+\..+$/'
+          when: always
+
