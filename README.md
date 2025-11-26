@@ -26,6 +26,8 @@ Then you can copy the `hse-logger.lvlib` into your project.
 The latest release version can also be found at 
 https://dokuwiki.hampel-soft.com/code/open-source/hse-logger/releases
 
+For further information on the Loki Log Handler, take a look at the readme.md in the folder [for the Loki Handler itself](Source/HSE-Logger/Handler/LokiHandler/README.md).
+
 ### Configuration 
 
 No configuration needed.
