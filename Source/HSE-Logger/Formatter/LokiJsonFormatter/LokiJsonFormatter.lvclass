@@ -23,6 +23,7 @@
 </Property>
 	<Item Name="Friends List" Type="Friends List">
 		<Item Name="UT_LokiJsonFormatter.lvlib" Type="Friended Library" URL="../../../../../Tests/Unit_Tests/UT_Formatter/UT_LokiJsonFormatter/UT_LokiJsonFormatter.lvlib"/>
+		<Item Name="UT_LokiHandler.lvlib" Type="Friended Library" URL="../../../../../Tests/Unit_Tests/UT_Handler/UT_LokiHandler/UT_LokiHandler.lvlib"/>
 	</Item>
 	<Item Name="LokiJsonFormatter.ctl" Type="Class Private Data" URL="LokiJsonFormatter.ctl">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>

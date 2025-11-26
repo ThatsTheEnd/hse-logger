@@ -1,6 +1,19 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Library LVVersion="17008000">
-	<Property Name="NI.Lib.Icon" Type="Bin">&amp;Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!(]!!!*Q(C=\&gt;7R=2MR%!81N=?"5X&lt;A91M&lt;/W-,&lt;'&amp;&lt;9+K1,7Q,&lt;)%N&lt;!NMA3X)DW?-RJ(JQ"I\%%Z,(@`BA#==ZB3RN;]28_,V7@P_W`:R`&gt;HV*SU_WE@\N_XF[3:^^TX\+2YP)D7K6;G-RV3P)R`ZS%=_]J'XP/5N&lt;XH,7V\SEJ?]Z#5P?=J4HP+5JTTFWS%0?=B$DD1G(R/.1==!IT.+D)`B':\B'2Z@9XC':XC':XBUC?%:HO%:HO&amp;R7QT0]!T0]!S0I4&lt;*&lt;)?=:XA-(]X40-X40-VDSGC?"GC4N9(&lt;)"D2,L;4ZGG?ZH%;T&gt;-]T&gt;-]T?.S.%`T.%`T.)^&lt;NF8J4@-YZ$S'C?)JHO)JHO)R&gt;"20]220]230[;*YCK=ASI2F=)1I.Z5/Z5PR&amp;)^@54T&amp;5TT&amp;5TQO&lt;5_INJ6Z;"[(H#&gt;ZEC&gt;ZEC&gt;Z$"(*ETT*ETT*9^B)HO2*HO2*(F.&amp;]C20]C2)GN4UE1:,.[:/+5A?0^NOS?UJ^3&lt;*\9B9GT@7JISVW7*NIFC&lt;)^:$D`5Q9TWE7)M@;V&amp;D,6;M29DVR]6#R],%GC47T9_/=@&gt;Z5V&gt;V57&gt;V5E&gt;V5(OV?^T[FTP?\`?YX7ZRP6\D=LH%_8S/U_E5R_-R$I&gt;$\0@\W/VW&lt;[_"&lt;Y[X&amp;],0^^+,]T_J&gt;`J@_B_]'_.T`$KO.@I"O[^NF!!!!!!</Property>
+	<Property Name="EndevoGOOP_ColorFrame" Type="UInt">0</Property>
+	<Property Name="EndevoGOOP_ColorHeader" Type="UInt">10452224</Property>
+	<Property Name="EndevoGOOP_ColorPrivate" Type="UInt">16777215</Property>
+	<Property Name="EndevoGOOP_ColorPublic" Type="UInt">16757617</Property>
+	<Property Name="EndevoGOOP_ColorTextBody" Type="UInt">0</Property>
+	<Property Name="EndevoGOOP_ColorTextHeader" Type="UInt">16777215</Property>
+	<Property Name="EndevoGOOP_FrameThickness" Type="UInt">1</Property>
+	<Property Name="NI.Lib.Icon" Type="Bin">&amp;Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)Y!!!*Q(C=\&gt;5^&lt;F."&amp;-8R![+A^1[1NX"+*#JPQ26&amp;*)L&lt;:!(O)EJPY7\"7`!7\AJ!LKFQEQ7%`YQP4F)EJA#%5/:Z`/QT8\`-?X[2:HELP&gt;(&gt;J8,V&lt;+&amp;&gt;6\S9&lt;H[@\ZL23-`NJY&lt;4K:PG[?HWU[&gt;@'0_T[T2-R_0V,`AP&amp;,W5F`*`F]]8@Q2``(@Q3O."2#VK5I.KD78PCLT)C\T)C\T)ETT*ETT*ETT*ATT)ATT)ATT)47ZSEZP=Z#;@"\H)23ZS3-8CR5,&amp;J-5%27=I+NY+4_%J0)7(LSI]B;@Q&amp;*\#1R=6HM*4?!J0Y7'9#E`B+4S&amp;J`!QV:450-DR&amp;"[G6_**0)EH]31?FF4C31$*9MH%S31QF$1G(R*0YEE]@&amp;4C34S**`%E(JK6?"*0YEE]C9=B=V&gt;S;M:"DI&gt;J&amp;(A#4_!*0)'(K26Y!E`A#4S"B_55?!*0A!A7$#;(I'"1U#(Y%HA#$S=&amp;HM!4?!*0Y+&amp;J8K'9/T-UYS$(9TT'9TT'9TR-)?-R(O-R(O.B7BG0]2C0]2A03]FYD-&gt;Y$-1MSP)SEZG"JJ-*D)@8P&amp;M]LV*/C?=B^=WLPCH6.ZP[*F,@(/K,LL[9[IOEXHTVJKIX3\U*[D^/D6:DV)OI"Y_//P*_I/[J/_K7OK'OK3PKELI91X^TR_0RK-0BI0V_L^VOJ_VWK]VGI`6[L&gt;6KJ?6SK=6C=8Y-P/-Y0R$OHUN@0NR?@\XZ`J([@JS`@@,V8`L``!]]'`6;$^&gt;ADXY!L^Z2ZA!!!!!</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Item Name="Tests" Type="Folder">
+		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+		<Item Name="Test SendLogRecordsDoesNotThrowError.vi" Type="VI" URL="../Test SendLogRecordsDoesNotThrowError.vi"/>
+		<Item Name="Test SendLogRecordsMakesThemAvailableInLoki.vi" Type="VI" URL="../Test SendLogRecordsMakesThemAvailableInLoki.vi"/>
+	</Item>
+	<Item Name="UT_LokiHandler_Main.vi" Type="VI" URL="../UT_LokiHandler_Main.vi"/>
 </Library>
