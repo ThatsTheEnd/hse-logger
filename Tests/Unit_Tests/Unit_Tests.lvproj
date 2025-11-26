@@ -1,5 +1,6 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="17008000">
+	<Property Name="CCSymbols" Type="Str">LOKI_AVAILABLE,True;</Property>
 	<Property Name="NI.LV.All.SaveVersion" Type="Str">17.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.Project.Description" Type="Str"></Property>
@@ -22,6 +23,9 @@
 			<Item Name="UT_JSONLFormatter" Type="Folder">
 				<Item Name="UT_JSONLFormatter.lvlib" Type="Library" URL="../UT_Formatter/UT_JSONLFormatter/UT_JSONLFormatter.lvlib"/>
 			</Item>
+			<Item Name="UT_LokiJsonFormatter" Type="Folder">
+				<Item Name="UT_LokiJsonFormatter.lvlib" Type="Library" URL="../UT_Formatter/UT_LokiJsonFormatter/UT_LokiJsonFormatter.lvlib"/>
+			</Item>
 			<Item Name="UT_Formatter.lvlib" Type="Library" URL="../UT_Formatter/UT_Formatter.lvlib"/>
 		</Item>
 		<Item Name="UT_Handler" Type="Folder">
@@ -41,6 +45,7 @@
 		<Item Name="UT_LogRecord" Type="Folder">
 			<Item Name="UT_LogRecord.lvlib" Type="Library" URL="../UT_LogRecord/UT_LogRecord.lvlib"/>
 		</Item>
+		<Item Name="Caraya Unit Test.vit" Type="VI" URL="../Caraya Unit Test.vit"/>
 		<Item Name="UT_Main.vi" Type="VI" URL="../UT_Main.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>

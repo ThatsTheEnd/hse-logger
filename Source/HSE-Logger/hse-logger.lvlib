@@ -1,9 +1,8 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Library LVVersion="16008000">
+<Library LVVersion="17008000">
 	<Property Name="NI.Lib.Description" Type="Str">A set of classes to provide comprehensive logging functionality.</Property>
 	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
-	<Property Name="NI.Lib.Icon" Type="Bin">&amp;A#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)`!!!*Q(C=\&gt;7^&lt;6MR&amp;-8R%S/&amp;7WVA;)7TABI0I#L^&lt;6SF5JN3B2?Y)VC!E1(5J\IL0)_A#3QI@V+%:!/'V12/%*DP]6E[@#2`YPOQV-OV^&amp;7(3_8_D@+K83W2_E'D87XL_\&amp;&gt;&lt;&gt;?Z@W]`N0V6_\G`XO\`=PTDY8#=^:XZ,`AP&amp;(W7T`*`FR^``THYUJ\5^DA8.;F"&gt;8P'&gt;3DS)C`S)C`S)E`S*%`S*%`S*!`S)!`S)!`S)$?ZS5VO=J.&lt;RT?2S%5O=LG^/&amp;2-8ER5$&amp;I-5*Q-2=7B]"3?QF.Y_+L#5XA+4_%J0*SCQF.Y#E`B+4RU5_%J0)7H]"1?BOK3[BMZHM,$]%I]C3@R**\%QZ2+0!EAG3Q:/"E%BJ,'Z%0C34S*BY^+0)EH]33?R%/T%E`C34S**`(1J;^+&gt;EX&lt;S0%QD!*0Y!E]A3@Q-,1#4_!*0)%H]$#&gt;!E`A#2$"B-(A%"2U#EY)PA3?Q--@":\!%XA#4_#BK6_B[#P4.'UDRW-]RG-]RG-]$#(D-2\D-2\D96A:D`%9D`%9$V0*?)T(?!T%4-LU-I/:DO9E%RA0?\^&lt;X+^3&gt;IH\*IW&lt;6_/GV,D:.'YCD:N$Y[*L8%S.C[3R_"K,KL&amp;9'IOA]?-UU"I9D5EU/L=4N?-Y5&lt;@5$86.86'8V!6V4JWVLH`YR.VOJWG;N.VON&gt;FMN&amp;[PN6KNN&amp;QON6AM.*`0.:P.4K_"'\&lt;4#_(]8HL[PL_&gt;@O[`41`0N^0D`OY8XT`I``-`]'\5F6\/Q2L^"FHHA'!!!!!!</Property>
-	<Property Name="NI.Lib.SourceVersion" Type="Int">369131520</Property>
+	<Property Name="NI.Lib.Icon" Type="Bin">&amp;Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)`!!!*Q(C=\&gt;7^&lt;6MR&amp;-8R%S/&amp;7WVA;)7TABI0I#L^&lt;6SF5JN3B2?Y)VC!E1(5J\IL0)_A#3QI@V+%:!/'V12/%*DP]6E[@#2`YPOQV-OV^&amp;7(3_8_D@+K83W2_E'D87XL_\&amp;&gt;&lt;&gt;?Z@W]`N0V6_\G`XO\`=PTDY8#=^:XZ,`AP&amp;(W7T`*`FR^``THYUJ\5^DA8.;F"&gt;8P'&gt;3DS)C`S)C`S)E`S*%`S*%`S*!`S)!`S)!`S)$?ZS5VO=J.&lt;RT?2S%5O=LG^/&amp;2-8ER5$&amp;I-5*Q-2=7B]"3?QF.Y_+L#5XA+4_%J0*SCQF.Y#E`B+4RU5_%J0)7H]"1?BOK3[BMZHM,$]%I]C3@R**\%QZ2+0!EAG3Q:/"E%BJ,'Z%0C34S*BY^+0)EH]33?R%/T%E`C34S**`(1J;^+&gt;EX&lt;S0%QD!*0Y!E]A3@Q-,1#4_!*0)%H]$#&gt;!E`A#2$"B-(A%"2U#EY)PA3?Q--@":\!%XA#4_#BK6_B[#P4.'UDRW-]RG-]RG-]$#(D-2\D-2\D96A:D`%9D`%9$V0*?)T(?!T%4-LU-I/:DO9E%RA0?\^&lt;X+^3&gt;IH\*IW&lt;6_/GV,D:.'YCD:N$Y[*L8%S.C[3R_"K,KL&amp;9'IOA]?-UU"I9D5EU/L=4N?-Y5&lt;@5$86.86'8V!6V4JWVLH`YR.VOJWG;N.VON&gt;FMN&amp;[PN6KNN&amp;QON6AM.*`0.:P.4K_"'\&lt;4#_(]8HL[PL_&gt;@O[`41`0N^0D`OY8XT`I``-`]'\5F6\/Q2L^"FHHA'!!!!!!</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.SortType" Type="Int">3</Property>
@@ -21,6 +20,9 @@
 			<Item Name="LogLevel.ctl" Type="VI" URL="../LogLevel.ctl"/>
 			<Item Name="FGV Actions.ctl" Type="VI" URL="../FGV Actions.ctl"/>
 		</Item>
+		<Item Name="LokiHandler" Type="Folder">
+			<Item Name="LokiHandler.lvclass" Type="LVClass" URL="../Handler/LokiHandler/LokiHandler.lvclass"/>
+		</Item>
 		<Item Name="Handler.lvclass" Type="LVClass" URL="../Handler/Handler.lvclass"/>
 	</Item>
 	<Item Name="Logger" Type="Folder">
@@ -35,6 +37,9 @@
 		</Item>
 		<Item Name="HSE_v2_Formatter" Type="Folder">
 			<Item Name="HSE_v2_Formatter.lvclass" Type="LVClass" URL="../Formatter/HSE_v2_Formatter/HSE_v2_Formatter.lvclass"/>
+		</Item>
+		<Item Name="LokiJsonFormatter" Type="Folder">
+			<Item Name="LokiJsonFormatter.lvclass" Type="LVClass" URL="../Formatter/LokiJsonFormatter/LokiJsonFormatter.lvclass"/>
 		</Item>
 		<Item Name="Formatter.lvclass" Type="LVClass" URL="../Formatter/Formatter.lvclass"/>
 	</Item>
