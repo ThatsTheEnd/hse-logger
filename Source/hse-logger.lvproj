@@ -1,5 +1,6 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="17008000">
+	<Property Name="CCSymbols" Type="Str">HSE_LOGGER_THROW_INIT_WARNING,False;HSE_LOGGER_THROW_INIT_ERROR,False;</Property>
 	<Property Name="NI.LV.All.SaveVersion" Type="Str">17.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Item Name="My Computer" Type="My Computer">
@@ -17,6 +18,7 @@
 				<Property Name="NI.SortType" Type="Int">0</Property>
 				<Item Name="_Examples" Type="Folder">
 					<Item Name="Basic Usage of Loki Logger.vi" Type="VI" URL="../_Examples/Basic Usage of Loki Logger.vi"/>
+					<Item Name="Behaviour on Error on Input.vi" Type="VI" URL="../_Examples/Behaviour on Error on Input.vi"/>
 					<Item Name="Benchmark Logger.vi" Type="VI" URL="../_Examples/Benchmark Logger.vi"/>
 					<Item Name="Logging with Helper-VIs.vi" Type="VI" URL="../_Examples/Logging with Helper-VIs.vi"/>
 				</Item>

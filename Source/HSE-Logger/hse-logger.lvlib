@@ -47,6 +47,7 @@
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 		<Item Name="Logger Not Initialized Error Constant.vi" Type="VI" URL="../Logger/Logger Not Initialized Error Constant.vi"/>
 		<Item Name="Logger DVR FGV.vi" Type="VI" URL="../Logger DVR FGV.vi"/>
+		<Item Name="Conditionally Throw Logger Not Initialized.vi" Type="VI" URL="../Logger/Conditionally Throw Logger Not Initialized.vi"/>
 	</Item>
 	<Item Name="Helper" Type="Folder">
 		<Item Name="Get Logging Ref.vi" Type="VI" URL="../Get Logging Ref.vi"/>
